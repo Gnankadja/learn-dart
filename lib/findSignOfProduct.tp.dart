@@ -4,15 +4,10 @@
  * on ne doit pas calculer le produit des deux nombres.
 */
 
-void main() {
-  String findSignOfProduct(double numberOne, double numberTwo) {
-    double numberOneSign = numberOne.sign;
-    double numberTwoSign = numberTwo.sign;
-
-    if (numberOneSign == numberTwoSign) {
-      return "Positive";
-    } else {
-      return "Negatif";
-    }
+String findSignOfProduct(double numberOne, double numberTwo) {
+  if (numberOne.sign == numberTwo.sign) {
+    return "Positive";
+  } else {
+    return "Negative";
   }
 }
