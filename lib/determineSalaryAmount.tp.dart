@@ -12,14 +12,15 @@ import 'package:learn_dart/inInterval.tp.dart';
 double determineSalaryAmount(double oneHourPrice, double numberHours) {
   if (numberHours <= 39) {
     return 0;
-  } else if (inInterval(numberHours, 40, 44)) {
-    double additionalHours = numberHours - 39;
-    return (oneHourPrice * 0.5 * additionalHours);
-  } else if (inInterval(numberHours, 45, 49)) {
-    double additionalHours = numberHours - 39;
-    return (oneHourPrice * 0.75 * additionalHours);
   } else {
     double additionalHours = numberHours - 39;
-    return (oneHourPrice * 1 * additionalHours);
+
+    if (inInterval(numberHours, 40, 44)) {
+      return (oneHourPrice * 0.5 * additionalHours);
+    } else if (inInterval(numberHours, 45, 49)) {
+      return (oneHourPrice * 0.75 * additionalHours);
+    } else {
+      return (oneHourPrice * 1 * additionalHours);
+    }
   }
 }
